@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 34.758 sec <<< FAILURE! - in TestSuite
+runCukes(com.xde.XRefresh.runners.AppLaunchRunner)  Time elapsed: 33.807 sec  <<< FAILURE!
+cucumber.runtime.CucumberException: java.lang.NullPointerException
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:57)
+	at com.xde.XRefresh.runners.AppLaunchRunner.runCukes(AppLaunchRunner.java:20)
+Caused by: java.lang.NullPointerException: null
+	at com.xde.XRefresh.PageObjects.BasePage.type(BasePage.java:60)
+	at com.xde.XRefresh.PageObjects.OfficeLoginPage.userNameFunction(OfficeLoginPage.java:57)
+	at com.xde.XRefresh.steps.CommonStepDefs.user_provides_UserName_and_clicks_on_Next_Button(CommonStepDefs.java:86)
+	at ?.And user provides UserName and clicks on Next Button(src/test/resources/features/appLaunch.feature:7)
+

@@ -1,0 +1,6 @@
+INFO    2020-05-13 23:31:47,154 [pool-1-thread-2] com.xde.XRefresh.steps.BaseSteps  - Config properties file loaded
+INFO    2020-05-13 23:31:47,154 [pool-1-thread-1] com.xde.XRefresh.steps.BaseSteps  - Config properties file loaded
+INFO    2020-05-13 23:31:53,186 [pool-1-thread-2] com.xde.XRefresh.steps.BaseSteps  - Driver Initialized !!!
+INFO    2020-05-13 23:31:53,298 [pool-1-thread-1] com.xde.XRefresh.steps.BaseSteps  - Driver Initialized !!!
+INFO    2020-05-13 23:32:19,675 [pool-1-thread-1] com.xde.XRefresh.steps.BaseSteps  - Test Execution Completed !!!
+INFO    2020-05-13 23:32:20,535 [pool-1-thread-2] com.xde.XRefresh.steps.BaseSteps  - Test Execution Completed !!!
