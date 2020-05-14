@@ -54,11 +54,18 @@ public abstract class BasePage<T> {
 			
 		}
 		
-		public void type(WebElement element, String value, String elementName) {
-			
+		public void type(WebElement element, String value, String elementName) {			
 			element.sendKeys(value);
 			ExtentTestManager.testReport.get().info("Typing in : "+elementName+" entered the value as : "+value);
 		
 		}
+		
+		public void switchToFrame(String webAppFrame){
+			driver.switchTo().defaultContent();
+			driver.switchTo().frame(webAppFrame);
+			ExtentTestManager.testReport.get().info("Switchied in IFrame : "+webAppFrame);
+			
+		}
+		
 	
 }

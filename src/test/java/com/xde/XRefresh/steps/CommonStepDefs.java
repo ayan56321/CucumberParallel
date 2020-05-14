@@ -3,8 +3,11 @@ package com.xde.XRefresh.steps;
 import com.aventstack.extentreports.Status;
 import com.xde.XRefresh.ExtentListeners.ExtentManager;
 import com.xde.XRefresh.ExtentListeners.ExtentTestManager;
+import com.xde.XRefresh.PageObjects.ExcelPage;
+import com.xde.XRefresh.PageObjects.OfcLandingPage;
 import com.xde.XRefresh.PageObjects.OfficeHomePage;
 import com.xde.XRefresh.PageObjects.OfficeLoginPage;
+import com.xde.XRefresh.PageObjects.XDE_AppPage;
 import com.xde.XRefresh.utilities.DriverManager;
 
 import cucumber.api.PendingException;
@@ -18,7 +21,7 @@ import cucumber.api.java.en.When;
 public class CommonStepDefs extends BaseSteps {
 
 	public OfficeHomePage home;
-	public OfficeLoginPage login;
+	//public OfcLandingPage login;
 
 	protected Scenario scenario;
 	static String scenarioName;
@@ -26,8 +29,6 @@ public class CommonStepDefs extends BaseSteps {
 
 	@Before
 	public synchronized void  before(Scenario scenario) {
-
-		
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -75,17 +76,52 @@ public class CommonStepDefs extends BaseSteps {
 		home = new OfficeHomePage().open(URL);
 	}
 	
-
+	public OfficeLoginPage login;
+	
 	@Then("^user click on login$")
 	public void user_click_on_login() throws Throwable {		
-		home.gotoLogin();
+		 login = home.gotoLogin();
 	}
 	
 	@Then("^user provides UserName and clicks on Next Button$")
-	public void user_provides_UserName_and_clicks_on_Next_Button() throws Throwable {
-	   login = new OfficeLoginPage().userNameFunction(getDefaultUserName());
-	   // login.userNameFunction(getDefaultUserName());
+	public void user_provides_UserName_and_clicks_on_Next_Button() throws Throwable {		
+	
+	      login.userNameFunction(getDefaultUserName());			   	   
 	}
+	
+	public OfcLandingPage excel;
+	
+	@Then("^user provides password and clicks on Login Button$")
+	public void user_provides_password_and_clicks_on_Login_Button() throws Throwable {
+	    excel = login.passwordFunction(getDefaultPassword());
+	}
+	
+	public ExcelPage appStart ;
+	
+	@Given("^user clicks on Excel Icon$")
+	public void user_clicks_on_Excel_Icon() throws Throwable {
+		appStart = excel.gotoExcel();
+	}
+	
+	public XDE_AppPage xde ;
+	
+	@Given("^user then navigates and clicks on New Blank Workbook$")
+	public void user_then_navigates_and_clicks_on_New_Blank_Workbook() throws Throwable {
+	    xde = appStart.gotoNewBlankWkBk();
+	}
+	
+	@Given("^user switches to \"([^\"]*)\" Frame$")
+	public void user_switches_to_Frame(String webFrameName) throws Throwable {
+	    xde.switchtoWebAppFrame(webFrameName);
+	}
+	
+	
+	@Given("^user clicks on Insert Button on workbook created$")
+	public void user_clicks_on_Insert_Button_on_workbook_created() throws Throwable {
+	    xde.insertLink();
+	}
+	
+	
 
 
 }

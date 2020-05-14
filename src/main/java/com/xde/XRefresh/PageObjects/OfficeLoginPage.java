@@ -22,11 +22,6 @@ public class OfficeLoginPage extends BasePage {
 	public WebElement logInButton ;
 
 	public OfficeLoginPage doLoginAsInvalidUser(String username, String password) throws InterruptedException {
-
-		/*type(email, username, "Username textbox");
-		type(pass, password, "Password textbox");
-		click(signin, "Sign in Button");*/
-		
 		type(userNameField, username, "UserName");		
 		click(nextButton,"Next Button");		
 		Thread.sleep(5000);		
@@ -38,11 +33,6 @@ public class OfficeLoginPage extends BasePage {
 	}
 
 	public OfcLandingPage doLoginAsValidUser(String username, String password) throws InterruptedException {
-
-		/*type(email, username, "Username textbox");
-		type(pass, password, "Password textbox");
-		click(signin, "Sign in Button");*/
-		
 		type(userNameField, username, "UserName");		
 		click(nextButton,"Next Button");		
 		Thread.sleep(5000);		
@@ -52,16 +42,22 @@ public class OfficeLoginPage extends BasePage {
 		return (OfcLandingPage) openPage(OfcLandingPage.class);
 	}
 	
-	public OfficeLoginPage userNameFunction(String username) throws InterruptedException{
-		System.out.println("userName value fetched "+username);
-		type(userNameField, username, "UserName");		
-		click(nextButton,"Next Button");		
-		Thread.sleep(5000);
+	public OfficeLoginPage userNameFunction(String username) throws InterruptedException{		
+		Thread.sleep(2000);
+		type(userNameField, username, "UserName");	
+		click(nextButton,"Next Button");
 		
-		//return this;
-		return (OfficeLoginPage) openPage(OfficeLoginPage.class);		
+		return this;
+		//return (OfficeLoginPage) openPage(OfficeLoginPage.class);		
 	}
 	
+	public OfcLandingPage passwordFunction(String password) throws InterruptedException{		
+		Thread.sleep(2000);
+		type(passwordField, password, "PassWord");
+		click(logInButton,"LogIn Button");
+
+		return (OfcLandingPage) openPage(OfcLandingPage.class);	
+	}
 
 	@Override
 	protected ExpectedCondition getPageLoadCondition() {

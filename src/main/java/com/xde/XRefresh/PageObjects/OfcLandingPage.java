@@ -7,8 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.xde.XRefresh.PageObjects.ExcelPage;
 
-public class OfcLandingPage extends BasePage{
-	
+public class OfcLandingPage extends BasePage{	
 	
 	@FindBy(xpath="//div[text()=' Excel ']")
 	public WebElement Excel;
@@ -22,15 +21,11 @@ public class OfcLandingPage extends BasePage{
 		return ExpectedConditions.visibilityOf(Excel);
 	}
 
-	public ExcelPage gotoExcel() {
+	public ExcelPage gotoExcel() throws InterruptedException {
+		Thread.sleep(5000);
 		click(Excel,"Excel Link");
-		//return (ExcelPage) OpenPage(ExcelPage.class);
+		System.out.println("In the Excel page");
 		return (ExcelPage) openPage(ExcelPage.class);
 	}
 	
-	/*public ZohoCRMPage gotoCRM() {		
-		click(crm,"CRM Link");
-		return (ZohoCRMPage) openPage(ZohoCRMPage.class);
-	}*/
-		
 }

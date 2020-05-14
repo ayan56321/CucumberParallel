@@ -1,6 +1,7 @@
 F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\PageObjects\OfficeLoginPage.java
 F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\utilities\DriverFactory.java
 F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\ExtentListeners\ExtentManager.java
+F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\PageObjects\XDE_AppPage.java
 F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\ExtentListeners\ExtentTestManager.java
 F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\PageObjects\ExcelPage.java
 F:\WSSelenium\CucumberParallelWithPageObjects\src\main\java\com\xde\XRefresh\PageObjects\BasePage.java

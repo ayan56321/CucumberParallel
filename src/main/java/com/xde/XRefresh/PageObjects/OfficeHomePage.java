@@ -14,8 +14,7 @@ public class OfficeHomePage extends BasePage {
 	@FindBy(xpath="//*[@id='hero-banner-sign-in-to-office-365-link']")
 	public WebElement logInBtn;
 	
-	public OfficeHomePage open(String url) {
-	
+	public OfficeHomePage open(String url) {	
 		System.out.println("Page Opened");
 		DriverManager.getDriver().navigate().to(url);
 		return (OfficeHomePage) openPage(OfficeHomePage.class);
